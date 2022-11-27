@@ -1,6 +1,22 @@
+import { createBrowserRouter } from 'react-router-dom'
 
-export default function App(){
-  return(
-    <h1>LinkOtteca - Minha biblioteca de Link</h1>
-  )
-}
+import Home from './pages/Home'
+import Login from './pages/Login'
+import Admin from './pages/Admin'
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Home/>  
+  },
+  {
+    path: '/login',
+    element: <Login/>
+  },
+  {
+    path: '/admin',
+    element: <Admin/>
+  }
+])
+
+export { router };
