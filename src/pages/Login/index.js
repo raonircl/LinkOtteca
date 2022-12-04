@@ -1,7 +1,9 @@
+import './login.css'
 
+import { Logo } from '../../components/Logo'
 
 export default function Login(){
   return(
-    <h1>Página de Login</h1>
+    <Logo/>
   )
 }
