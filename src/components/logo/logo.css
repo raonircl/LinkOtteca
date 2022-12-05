@@ -8,6 +8,7 @@
 .logo-text{
   background: linear-gradient(rgb(0,132,255), rgb(130,180,500));
   background-clip: text;
+  font-style: italic;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
