@@ -1,15 +1,38 @@
-import { useState } from 'react'
 import './register.css'
-
+import { useState } from 'react'
 import { Logo } from '../../components/Logo'
 
-export default function Register(){
+import { auth } from '../../services/firebaseConnection'
+import { signInWithEmailAndPassword } from 'firebase/auth'
+
+import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
+
+export default function Login(){
   const [ email, setEmail ] = useState('');
   const [ password, setPassword ] = useState('');
 
-  function handleLogin(){
+  const navigate = useNavigate();
+
+  function handleLogin(e){
+    e.preventDefault();
+
+    if (email === '' || password === ''){
+      alert("Preencha todos os campos")
+      return;
+    }
+
+    signInWithEmailAndPassword(auth, email, password)
+    .then(() => {
+      navigate("/", { replace:true })
+      toast.success("Cadastrado com sucesso!")
+    })
+    .catch(() => {
+      toast.error("Não foi possível realizar o cadastro, tente novamente.")
+    })
 
   }
+
 
   return(
     <div className='login-container'>
@@ -32,7 +55,7 @@ export default function Register(){
           onChange={ (e) => setPassword(e.target.value) }
         />
 
-        <button type='submit'> Acessar</button>
+        <button type='submit'>Cadastrar</button>
         
       </form>
 
