@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { Logo } from '../../components/Logo'
 
 import { auth } from '../../services/firebaseConnection'
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { createUserWithEmailAndPassword } from 'firebase/auth'
 
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
@@ -11,7 +11,7 @@ import { toast } from 'react-toastify'
 export default function Register(){
   const [ email, setEmail ] = useState('');
   const [ password, setPassword ] = useState('');
-  const [ createUserWithEmailAndPassword, loading ] = useCreateUserWithEmailAndPassword(auth);
+  /* const [ createUserWithEmailAndPassword, loading ] = createUserWithEmailAndPassword(auth); */
 
   const navigate = useNavigate();
 
@@ -23,12 +23,7 @@ export default function Register(){
       return;
     }
 
-    if(loading){
-      toast.update("Carregando...")
-      return;
-    }
-
-    createUserWithEmailAndPassword(email, password)
+    createUserWithEmailAndPassword(auth, email, password)
     .then(() => {
       navigate("/", { replace:true })
       toast.success("Cadastrado com sucesso!")
