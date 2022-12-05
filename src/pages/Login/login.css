@@ -22,3 +22,15 @@
   font-size: 18px;
   color: #fff;
 }
+
+.cad-link{
+  margin-top: 44px;
+  color: #fff;
+  transition: transform 0.4s;
+}
+
+.cad-link:hover{
+  transform: scale(1.05);
+  cursor: pointer;
+  color: #3366ff;
+}

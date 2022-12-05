@@ -25,7 +25,7 @@ export default function Login(){
 
     signInWithEmailAndPassword(auth, email, password)
     .then(() => {
-      navigate("/", { replace:true })
+      navigate("/home", { replace:true })
       toast.success("Login efetuado com sucesso!")
     })
     .catch(() => {
@@ -60,7 +60,9 @@ export default function Login(){
         
       </form>
 
-
+      <a className='cad-link' href="/register">
+        <span>Faça seu cadastro...</span>
+      </a>
     </div>
   )
 }
