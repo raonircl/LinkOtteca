@@ -3,26 +3,32 @@ import { useState } from 'react'
 import { Logo } from '../../components/Logo'
 
 import { auth } from '../../services/firebaseConnection'
-import { signInWithEmailAndPassword } from 'firebase/auth'
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 
-export default function Login(){
+export default function Register(){
   const [ email, setEmail ] = useState('');
   const [ password, setPassword ] = useState('');
+  const [ createUserWithEmailAndPassword, loading ] = useCreateUserWithEmailAndPassword(auth);
 
   const navigate = useNavigate();
 
-  function handleLogin(e){
+  function handleSignIn(e){
     e.preventDefault();
 
     if (email === '' || password === ''){
-      alert("Preencha todos os campos")
+      toast.error("Preencha todos os dados!")
       return;
     }
 
-    signInWithEmailAndPassword(auth, email, password)
+    if(loading){
+      toast.update("Carregando...")
+      return;
+    }
+
+    createUserWithEmailAndPassword(email, password)
     .then(() => {
       navigate("/", { replace:true })
       toast.success("Cadastrado com sucesso!")
@@ -38,7 +44,7 @@ export default function Login(){
     <div className='login-container'>
       <Logo/>
 
-      <form className='form' onSubmit={handleLogin}>
+      <form className='form' onSubmit={handleSignIn}>
 
         <input
           type='email'
