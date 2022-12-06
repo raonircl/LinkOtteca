@@ -9,8 +9,7 @@ export default function Error(){
       <Logo/>
       
       <h1>Página não encontrada!</h1>
-      <p>A página que você está procurando não existe em nossa plataforma</p>
-
+      
       <Link className='link' to='/'>
         Voltar para Página Home
       </Link>

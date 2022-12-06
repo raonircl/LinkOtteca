@@ -17,14 +17,14 @@
 .form button{
   height: 36px;
   border-radius: 4px;
-  background-color: #3366ff;
+  background-color:rgb(0,132,255);
   border: 0;
   font-size: 18px;
   color: #fff;
 }
 
 .cad-link{
-  background: linear-gradient(rgb(0,132,255), rgb(130,180,500));
+  background-color:rgb(0,132,255);
   color: #FFF;
   padding: 4px 16px;
   margin-top: 14px;
@@ -34,6 +34,7 @@
 
 .cad-link:hover{
   transform: scale(1.05);
+  background-color:  rgb(130,180,500);
   cursor: pointer;
   color: #000;
 }
