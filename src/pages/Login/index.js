@@ -61,7 +61,7 @@ export default function Login(){
       </form>
 
       <a className='cad-link' href="/register">
-        <span>Faça seu cadastro...</span>
+        <span>Faça seu cadastro</span>
       </a>
     </div>
   )

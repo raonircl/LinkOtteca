@@ -24,13 +24,16 @@
 }
 
 .cad-link{
-  margin-top: 44px;
-  color: #fff;
-  transition: transform 0.4s;
+  background: linear-gradient(rgb(0,132,255), rgb(130,180,500));
+  color: #FFF;
+  padding: 4px 16px;
+  margin-top: 14px;
+  border-radius: 4px;
+  transition: background-color 0.5s;
 }
 
 .cad-link:hover{
   transform: scale(1.05);
   cursor: pointer;
-  color: #3366ff;
+  color: #000;
 }
