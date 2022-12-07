@@ -36,7 +36,7 @@ export default function Private({children}){
 
     checkLogin();
 
-  }, {})
+  })
   
   if(loading){
     return(

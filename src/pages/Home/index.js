@@ -4,11 +4,12 @@ import { Logo } from '../../components/Logo'
 import { Social } from '../../components/Social'
 
 import { FaLinkedin, FaInstagram, FaNewspaper, FaYoutube, FaBook, FaMusic, } from 'react-icons/fa'
+import { Header } from '../../components/Header'
 
 export default function Home(){
   return(
     <div className='home-container'>
-      
+      <Header/>
       <header className='header'>
         <Logo/>
       </header>
@@ -68,7 +69,7 @@ export default function Home(){
           <FaLinkedin size={35} color="#FFF"/>
         </Social>
       </footer>
-
+    
     </div>
   )
 }
