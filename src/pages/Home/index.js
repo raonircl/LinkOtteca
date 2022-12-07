@@ -3,7 +3,7 @@ import './home.css'
 import { Logo } from '../../components/Logo'
 import { Social } from '../../components/Social'
 
-import { FaLinkedin, FaInstagram, FaNewspaper, FaYoutube, FaBook, FaMusic, } from 'react-icons/fa'
+import { FaLinkedin, FaInstagram, FaNewspaper, FaYoutube, FaBook, FaMusic, FaGithub, } from 'react-icons/fa'
 import { Header } from '../../components/Header'
 
 export default function Home(){
@@ -63,10 +63,13 @@ export default function Home(){
 
       <footer>
         <Social url="https://www.linkedin.com/in/raoni-cerqueira-027026211/">
-          <FaInstagram size={35} color="#FFF"/>
+          <FaInstagram size={35} color='#FFF'/>
         </Social>
         <Social url="https://www.instagram.com/raonircl/">
-          <FaLinkedin size={35} color="#FFF"/>
+          <FaLinkedin size={35} color='#FFF'/>
+        </Social>
+        <Social url="https://github.com/raonircl">
+          <FaGithub size={35} color='#FFF'/>
         </Social>
       </footer>
     

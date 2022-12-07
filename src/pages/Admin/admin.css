@@ -4,7 +4,6 @@
   flex-direction: column;
   min-height: 100vh;
   padding: 0 6px 24px 6px;
-  
 }
 
 .label{
@@ -18,6 +17,13 @@
   display: flex;
   margin: 14px 0;
   gap: 22px;
+  padding: 25px;
+  border-radius: 20px 0 20px 0;
+  background: linear-gradient(rgb(0,132,255), rgb(130,180,500));
+}
+
+.container-colors h3{
+  color: #FFF;
 }
 
 .right{

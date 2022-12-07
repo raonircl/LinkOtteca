@@ -5,6 +5,11 @@ import { Link } from 'react-router-dom'
 
 import { auth } from '../../services/firebaseConnection'
 import { signOut } from 'firebase/auth'
+import { 
+  AiOutlineLink,
+  AiOutlineHome,
+  AiOutlineUser 
+} from 'react-icons/ai'
 
 export function Header() {
   
@@ -20,11 +25,15 @@ export function Header() {
         </button>
 
         <Link to="/admin">
-          Links
+          <AiOutlineLink size={28}/>
         </Link>
 
-        <Link to="/admin/social">
-          Redes sociais
+        <Link to='/home'>
+          <AiOutlineHome size={28}/>
+        </Link>
+        
+        <Link to='/'>
+          <AiOutlineUser size={28}/>
         </Link>
 
       </nav>
