@@ -22,6 +22,11 @@
   background-color: transparent;
   margin-right: 24px;
   margin-left: 8px;
+  color: rgb(0,132,255);
+}
+
+button:hover{
+  color: #ff0000;
 }
 
 .nav-header a{

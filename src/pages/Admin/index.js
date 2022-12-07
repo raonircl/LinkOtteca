@@ -5,7 +5,7 @@ import { Logo } from '../../components/Logo'
 import { Input } from '../../components/Input'
 
 import { MdAddLink } from 'react-icons/md'
-import { FiTrash2 } from 'react-icons/fi'
+import { AiFillDelete } from 'react-icons/ai'
 
 import { db } from '../../services/firebaseConnection'
 import {
@@ -25,6 +25,7 @@ export default function Admin(){
   const [urlInput, setUrlInput] = useState("");
   const [backgroundColorInput, setBackgroundColorInput] = useState("#f1f1f1");
   const [textColorInput, setTextColorInput] = useState("#121212");
+  const [generInput, setGenerInput] = useState("");
 
   const [links, setLinks] = useState([])
 
@@ -42,7 +43,8 @@ export default function Admin(){
           name: doc.data().name,
           url: doc.data().url,
           bg: doc.data().background,
-          color: doc.data().color
+          color: doc.data().color,
+          gener: doc.data().gener
         })  
       })
 
@@ -50,7 +52,7 @@ export default function Admin(){
 
     })
 
-  }, [])
+  })
 
   function handleRegister(e){
     e.preventDefault();
@@ -66,6 +68,7 @@ export default function Admin(){
       background: backgroundColorInput,
       color: textColorInput,
       created: new Date(),
+      gener: generInput,
     })
     .then(() =>{
       setNameInput('');
@@ -104,10 +107,17 @@ export default function Admin(){
           value={urlInput}
           onChange={ (e) => setUrlInput(e.target.value) }
         />
+        <label className='label'>Nome da pasta</label>
+        <Input
+          type="name"
+          placeholder="Digite o nome da pasta"
+          value={generInput}
+          onChange={ (e) => setGenerInput(e.target.value) }
+        />
 
         <section className="container-colors">
           <div>
-            <label className="label right">Fundo do link</label>
+            <label className="label right">Cor de fundo</label>
             <input
               type="color"
               value={backgroundColorInput}
@@ -116,7 +126,7 @@ export default function Admin(){
           </div>
 
           <div>
-            <label className="label right">Cor do link</label>
+            <label className="label right">Cor da letra</label>
             <input
               type="color"
               value={textColorInput}
@@ -153,7 +163,7 @@ export default function Admin(){
         <p>{item.name}</p>
         <div>
           <button className="btn-delete" onClick={ () => handleDeleteLink(item.id) }>
-            <FiTrash2 size={18} color="#FFF"/>
+            <AiFillDelete size={18} color="#FFF"/>
           </button>
         </div>
       </article>

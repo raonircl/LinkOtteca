@@ -20,8 +20,9 @@ export function Header() {
   return(
     <header className='admin-header'>
       <nav className='nav-header'>
+        
         <button onClick={handleLogout}>
-          <BiLogOut size={28} color="rgb(0,132,255)"/>
+          <BiLogOut size={28}/>
         </button>
 
         <Link to="/admin">
