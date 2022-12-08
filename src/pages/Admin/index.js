@@ -62,7 +62,7 @@ export default function Admin(){
       return;
     }
 
-    addDoc(collection(db, "links"), {
+    addDoc(collection(db, generInput), {
       name: nameInput,
       url: urlInput,
       background: backgroundColorInput,
@@ -73,6 +73,8 @@ export default function Admin(){
     .then(() =>{
       setNameInput('');
       setUrlInput('');
+      setGenerInput('');
+      toast.success('Cadastrado com sucesso!')
     })
     .catch((error) => {
       toast.error('Ops, erro ao salvar link!');
