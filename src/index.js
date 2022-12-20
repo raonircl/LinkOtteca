@@ -13,7 +13,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Background/>
-    <ToastContainer autoClose={2500} />
+    <ToastContainer autoClose={1500} />
     <RouterProvider router={router}/>
   </React.StrictMode>
 );

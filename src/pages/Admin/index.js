@@ -161,20 +161,20 @@ export default function Admin(){
         Meus links
       </h2>
 
-    { links.map( (item, index) => (
-      <article
-        key={index} 
-        className="list animate-top"
-        style={{ backgroundColor: item.bg, color: item.color }}
-        >
-        <p>{item.name}</p>
-        <div>
-          <button className="btn-delete" onClick={ () => handleDeleteLink(item.id) }>
-            <AiFillDelete size={18} color="#FFF"/>
-          </button>
-        </div>
-      </article>
-    ) )}
+      { links.map( (item, index) => (
+        <article
+          key={index} 
+          className="list animate-top"
+          style={{ backgroundColor: item.bg, color: item.color }}
+          >
+          <p>{item.name}</p>
+          <div>
+            <button className="btn-delete" onClick={ () => handleDeleteLink(item.id) }>
+              <AiFillDelete size={18} color="#FFF"/>
+            </button>
+          </div>
+        </article>
+      ) )}
 
 
     </div>
