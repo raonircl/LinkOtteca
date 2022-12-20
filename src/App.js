@@ -8,6 +8,7 @@ import Register from './pages/Register'
 import Error from './pages/Error'
 import Private from "./routes/Private"
 
+
 const router = createBrowserRouter([
   {
     path: '/',

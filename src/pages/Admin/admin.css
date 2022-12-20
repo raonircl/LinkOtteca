@@ -13,6 +13,19 @@
   margin-bottom: 14px;
 }
 
+.select{
+  color: black;
+  font-weight: medium;
+  border: 0;
+  height: 36px;
+  width: 100%;
+  margin-bottom: 14px;
+  border-radius: 4px;
+  padding: 0 8px;
+  margin-top: 8px;
+  margin-bottom: 14px;
+}
+
 .container-colors{
   display: flex;
   margin: 14px 0;

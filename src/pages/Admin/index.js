@@ -25,7 +25,7 @@ export default function Admin(){
   const [urlInput, setUrlInput] = useState("");
   const [backgroundColorInput, setBackgroundColorInput] = useState("#f1f1f1");
   const [textColorInput, setTextColorInput] = useState("#121212");
-  const [generInput, setGenerInput] = useState("");
+  const [generInput, setGenerInput] = useState([]);
 
   const [links, setLinks] = useState([])
 
@@ -109,13 +109,18 @@ export default function Admin(){
           value={urlInput}
           onChange={ (e) => setUrlInput(e.target.value) }
         />
-        <label className='label'>Nome da pasta</label>
-        <Input
-          type="name"
-          placeholder="Digite o nome da pasta"
-          value={generInput}
-          onChange={ (e) => setGenerInput(e.target.value) }
-        />
+        <section>
+          <label className='label'>Pasta</label>
+          <br/>
+          <select className='select' value={generInput} onChange={(e) => setGenerInput(e.target.value)} >
+            <option>Youtube</option>
+            <option>Filmes</option>
+            <option>Músicas</option>
+            <option>Notícias</option>
+            <option>Estudo</option>
+            <option>Fotos</option>
+          </select>
+        </section>
 
         <section className="container-colors">
           <div>
