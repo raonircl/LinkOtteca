@@ -21,9 +21,9 @@ export default function Home(){
       <main className='links'>
 
         <section className='link-area'>
-          <a href="#">
+          <Link to="/musicas">
             <p className='link-text'>Músicas <FaMusic/></p>
-          </a>
+          </Link>
         </section>
 
         <section className='link-area'>
@@ -33,9 +33,9 @@ export default function Home(){
         </section>
 
         <section className='link-area'>
-          <a href="#">
+          <Link to="/youtube">
             <p className='link-text'>Youtube <FaYoutube/></p>
-          </a>          
+          </Link>          
         </section>
 
       </main>
@@ -44,21 +44,21 @@ export default function Home(){
       <main className='links'>
 
         <section className='link-area'>
-          <a href="#">
+          <Link to="/noticias">
             <p className='link-text'>Notícias <FaNewspaper/></p>
-          </a>
+          </Link>
         </section>
 
         <section className='link-area'>
-          <a href="#">
+          <Link to="/filmes">
             <p className='link-text'>Filmes <FaFilm/></p>
-          </a>
+          </Link>
         </section>
 
         <section className='link-area'>
-          <a href="#">
+          <Link to="/fotos">
             <p className='link-text'>Fotos <FaPhotoVideo/></p>
-          </a>          
+          </Link>          
         </section>
 
       </main>

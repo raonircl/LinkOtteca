@@ -1,10 +1,12 @@
-import '../home.css'
+
+import './estudo.css'
+
 import { useEffect, useState } from 'react'
 import { Header } from '../../../components/Header'
 import { Logo } from '../../../components/Logo'
 
 
-import { AiFillDelete } from 'react-icons/ai'
+import { AiFillDelete, AiOutlineArrowRight } from 'react-icons/ai'
 
 import { db } from '../../../services/firebaseConnection'
 import {
@@ -18,7 +20,7 @@ import {
 } from 'firebase/firestore'
 
 
-export default function Estudo(){
+export default function GetLink(){
   const [links, setLinks] = useState([])
   
     useEffect(() => {
@@ -47,7 +49,7 @@ export default function Estudo(){
     })
 
     function handleDeleteLink(id) {
-      const docRef = doc(db, "links", id)
+      const docRef = doc(db, "Estudo", id)
       deleteDoc(docRef)
     }
 
@@ -60,20 +62,25 @@ export default function Estudo(){
         Meus links
       </h2>
 
-      <main className='links'>
+      <main className='links-container'>
         { links.map( (item, index) => (
-          <article
+          <section
             key={index} 
-            className="list animate-top"
+            className="list animate-top link-area"
             style={{ backgroundColor: item.bg, color: item.color }}
-            >
+          >  
             <p>{item.name}</p>
             <div>
+
+              <a href={item.url}><button className='btn-in'><AiOutlineArrowRight size={18} color="#FFF"/></button></a>
+
               <button className="btn-delete" onClick={ () => handleDeleteLink(item.id) }>
                 <AiFillDelete size={18} color="#FFF"/>
               </button>
+
             </div>
-          </article>
+
+          </section>
         ) )}
       </main>
     </div>

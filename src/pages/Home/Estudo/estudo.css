@@ -1,0 +1,20 @@
+.links-container{
+  display: flex;
+  flex-flow: wrap;
+  grid-area: auto;
+  width: 90%;
+}
+
+.btn-in{
+  border: 1px;
+  background-color: rgb(0,132,255);
+  padding: 2px 4px;
+  border-radius: 50px 50px 50px 50px;
+  transition: transfom 0.4s;
+  margin-right: 5px;
+}
+
+.btn-in:hover{
+  transform: scale(1.05);
+  background-color: rgb(14, 223, 14);
+}

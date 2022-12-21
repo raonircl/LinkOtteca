@@ -1,21 +1,15 @@
 import './admin.css'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Header } from '../../components/Header'
 import { Logo } from '../../components/Logo'
 import { Input } from '../../components/Input'
 
 import { MdAddLink } from 'react-icons/md'
-import { AiFillDelete } from 'react-icons/ai'
 
 import { db } from '../../services/firebaseConnection'
 import {
   addDoc,
   collection,
-  onSnapshot,
-  query,
-  orderBy,
-  doc,
-  deleteDoc
 } from 'firebase/firestore'
 
 import { toast } from 'react-toastify'
@@ -26,33 +20,6 @@ export default function Admin(){
   const [backgroundColorInput, setBackgroundColorInput] = useState("#f1f1f1");
   const [textColorInput, setTextColorInput] = useState("#121212");
   const [generInput, setGenerInput] = useState([]);
-
-  const [links, setLinks] = useState([])
-
-  useEffect(() => {
-
-    const linksRef = collection(db, "links")
-    const queryRef = query(linksRef, orderBy("created", "asc"))
-
-    onSnapshot(queryRef, (snapshot) => {
-      let lista = [];
-
-      snapshot.forEach((doc) => {
-        lista.push({
-          id: doc.id,
-          name: doc.data().name,
-          url: doc.data().url,
-          bg: doc.data().background,
-          color: doc.data().color,
-          gener: doc.data().gener
-        })  
-      })
-
-      setLinks(lista);
-
-    })
-
-  })
 
   function handleRegister(e){
     e.preventDefault();
@@ -81,12 +48,6 @@ export default function Admin(){
     })
 
   }
-
-  function handleDeleteLink(id) {
-    const docRef = doc(db, "links", id)
-    deleteDoc(docRef)
-  }
-
   
   return(
     <div className="admin-container">
@@ -113,6 +74,7 @@ export default function Admin(){
           <label className='label'>Pasta</label>
           <br/>
           <select className='select' value={generInput} onChange={(e) => setGenerInput(e.target.value)} >
+            <option></option>
             <option>Youtube</option>
             <option>Filmes</option>
             <option>Músicas</option>
@@ -156,26 +118,6 @@ export default function Admin(){
         </button>
 
       </form>
-
-      <h2 className="title">
-        Meus links
-      </h2>
-
-      { links.map( (item, index) => (
-        <article
-          key={index} 
-          className="list animate-top"
-          style={{ backgroundColor: item.bg, color: item.color }}
-          >
-          <p>{item.name}</p>
-          <div>
-            <button className="btn-delete" onClick={ () => handleDeleteLink(item.id) }>
-              <AiFillDelete size={18} color="#FFF"/>
-            </button>
-          </div>
-        </article>
-      ) )}
-
 
     </div>
   )
