@@ -10,7 +10,7 @@ export default function Error(){
       
       <h1>Página não encontrada!</h1>
       
-      <Link className='link' to='/'>
+      <Link className='link' to='/home'>
         Voltar para Página Home
       </Link>
     </div>
