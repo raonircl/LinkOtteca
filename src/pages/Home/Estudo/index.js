@@ -3,7 +3,7 @@ import './estudo.css'
 
 import { useEffect, useState } from 'react'
 import { Header } from '../../../components/Header'
-import { Logo } from '../../../components/Logo'
+import { Logo } from '../../../components/logo'
 
 
 import { AiFillDelete, AiOutlineArrowRight } from 'react-icons/ai'

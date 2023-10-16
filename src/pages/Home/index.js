@@ -1,6 +1,6 @@
 import './home.css'
 
-import { Logo } from '../../components/Logo'
+import { Logo } from '../../components/logo'
 import { Social } from '../../components/Social'
 
 import { FaLinkedin, FaInstagram, FaNewspaper, FaYoutube, FaBook, FaMusic, FaGithub, FaFilm, FaPhotoVideo, } from 'react-icons/fa'

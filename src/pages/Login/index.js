@@ -1,6 +1,6 @@
 import './login.css'
 import { useState } from 'react'
-import { Logo } from '../../components/Logo'
+import { Logo } from '../../components/logo'
 import { Input } from '../../components/Input'
 
 import { auth } from '../../services/firebaseConnection'

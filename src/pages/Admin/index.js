@@ -1,7 +1,7 @@
 import './admin.css'
 import { useState } from 'react'
 import { Header } from '../../components/Header'
-import { Logo } from '../../components/Logo'
+import { Logo } from '../../components/logo'
 import { Input } from '../../components/Input'
 
 import { MdAddLink } from 'react-icons/md'
