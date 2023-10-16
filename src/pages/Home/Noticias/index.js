@@ -1,5 +1,5 @@
 
-import '../Estudo/estudo.css'
+import '../subpages.css'
 
 import { useEffect, useState } from 'react'
 import { Header } from '../../../components/Header'
@@ -25,7 +25,7 @@ export default function GetLink(){
   
     useEffect(() => {
   
-      const linksRef = collection(db, "Noticias")
+      const linksRef = collection(db, "Notícias")
       const queryRef = query(linksRef, orderBy("created", "asc"))
   
       onSnapshot(queryRef, (snapshot) => {
@@ -49,7 +49,7 @@ export default function GetLink(){
     })
 
     function handleDeleteLink(id) {
-      const docRef = doc(db, "Noticias", id)
+      const docRef = doc(db, "Notícias", id)
       deleteDoc(docRef)
     }
 

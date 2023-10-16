@@ -12,7 +12,7 @@ import { toast } from 'react-toastify'
 export default function Register(){
   const [ email, setEmail ] = useState('');
   const [ password, setPassword ] = useState('');
-  /* const [ createUserWithEmailAndPassword, loading ] = createUserWithEmailAndPassword(auth); */
+  // const [ createUserWithEmailAndPassword, loading ] = createUserWithEmailAndPassword(auth);
 
   const navigate = useNavigate();
 

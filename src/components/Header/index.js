@@ -8,7 +8,7 @@ import { signOut } from 'firebase/auth'
 import { 
   AiOutlineLink,
   AiOutlineHome,
-  AiOutlineUser 
+  AiOutlineUser
 } from 'react-icons/ai'
 
 export function Header() {
@@ -33,9 +33,9 @@ export function Header() {
           <AiOutlineHome size={28}/>
         </Link>
         
-        <Link to='/'>
+        {/* <Link to='/register'>
           <AiOutlineUser size={28}/>
-        </Link>
+        </Link> */}
 
       </nav>
     </header>

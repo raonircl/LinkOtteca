@@ -64,10 +64,10 @@ export default function Home(){
       </main>
 
       <footer>
-        <Social url="https://www.linkedin.com/in/raoni-cerqueira-027026211/">
+        <Social url="https://www.instagram.com/raonircl/">
           <FaInstagram size={35} color='#FFF'/>
         </Social>
-        <Social url="https://www.instagram.com/raonircl/">
+        <Social url="https://www.linkedin.com/in/raoni-cerqueira-027026211/">
           <FaLinkedin size={35} color='#FFF'/>
         </Social>
         <Social url="https://github.com/raonircl">

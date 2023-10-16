@@ -11,6 +11,7 @@ import {
   addDoc,
   collection,
 } from 'firebase/firestore'
+import { auth } from '../../services/firebaseConnection'
 
 import { toast } from 'react-toastify'
 
@@ -19,7 +20,7 @@ export default function Admin(){
   const [urlInput, setUrlInput] = useState("");
   const [backgroundColorInput, setBackgroundColorInput] = useState("#f1f1f1");
   const [textColorInput, setTextColorInput] = useState("#121212");
-  const [generInput, setGenerInput] = useState([]);
+  const [generInput, setGenerInput] = useState("");
 
   function handleRegister(e){
     e.preventDefault();
@@ -36,6 +37,7 @@ export default function Admin(){
       color: textColorInput,
       created: new Date(),
       gener: generInput,
+      authorId: auth.currentUser.uid,
     })
     .then(() =>{
       setNameInput('');

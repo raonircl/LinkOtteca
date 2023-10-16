@@ -1,5 +1,5 @@
 
-import '../Estudo/estudo.css'
+import '../subpages.css'
 
 import { useEffect, useState } from 'react'
 import { Header } from '../../../components/Header'
