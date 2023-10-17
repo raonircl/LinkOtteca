@@ -8,7 +8,7 @@ import { Logo } from '../../../components/logo'
 
 import { AiFillDelete, AiOutlineArrowRight } from 'react-icons/ai'
 
-import { db } from '../../../services/firebaseConnection'
+import { auth, db } from '../../../services/firebaseConnection'
 import {
   collection,
   deleteDoc,
@@ -19,10 +19,11 @@ import {
 
 } from 'firebase/firestore'
 
-
 export default function GetLink(){
   const [links, setLinks] = useState([])
-  
+  const user = auth.currentUser;
+  const authorId = user ? user.uid : null;
+
     useEffect(() => {
   
       const linksRef = collection(db, "Youtube")
@@ -32,14 +33,17 @@ export default function GetLink(){
         let lista = [];
   
         snapshot.forEach((doc) => {
-          lista.push({
-            id: doc.id,
-            name: doc.data().name,
-            url: doc.data().url,
-            bg: doc.data().background,
-            color: doc.data().color,
-            gener: doc.data().gener
-          })  
+          const documentData =  doc.data();
+          if (documentData.authorId === authorId) {
+            lista.push({
+              id: doc.id,
+              name: doc.data().name,
+              url: doc.data().url,
+              bg: doc.data().background,
+              color: doc.data().color,
+              gener: doc.data().gener
+            })
+          }            
         })
   
         setLinks(lista);

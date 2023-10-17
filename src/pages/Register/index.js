@@ -1,4 +1,3 @@
-import './register.css'
 import { useState } from 'react'
 import { Logo } from '../../components/logo'
 import { Input } from '../../components/Input'
@@ -12,7 +11,6 @@ import { toast } from 'react-toastify'
 export default function Register(){
   const [ email, setEmail ] = useState('');
   const [ password, setPassword ] = useState('');
-  // const [ createUserWithEmailAndPassword, loading ] = createUserWithEmailAndPassword(auth);
 
   const navigate = useNavigate();
 

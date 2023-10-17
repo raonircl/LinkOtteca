@@ -20,15 +20,18 @@ export default function Admin(){
   const [urlInput, setUrlInput] = useState("");
   const [backgroundColorInput, setBackgroundColorInput] = useState("#f1f1f1");
   const [textColorInput, setTextColorInput] = useState("#121212");
-  const [generInput, setGenerInput] = useState("");
+  const [generInput, setGenerInput] = useState([]);
 
   function handleRegister(e){
     e.preventDefault();
     
-    if(nameInput === '' || urlInput === ''){
-      toast.warn("Preencha todos os campos!");
+    if (nameInput === '' || urlInput === '' || generInput === '') {
+      toast.warn('Preencha todos os campos!');
       return;
     }
+
+    const user = auth.currentUser;
+    const authorId = user ? user.uid : null;
 
     addDoc(collection(db, generInput), {
       name: nameInput,
@@ -37,18 +40,18 @@ export default function Admin(){
       color: textColorInput,
       created: new Date(),
       gener: generInput,
-      authorId: auth.currentUser.uid,
+      authorId: authorId,
     })
-    .then(() =>{
-      setNameInput('');
-      setUrlInput('');
-      setGenerInput('');
-      toast.success('Cadastrado com sucesso!')
-    })
-    .catch((error) => {
-      toast.error('Ops, erro ao salvar link!');
-    })
-
+      .then(() =>{
+        setNameInput('');
+        setUrlInput('');
+        setGenerInput('');
+        toast.success('Cadastrado com sucesso!')
+      })
+      .catch((error) => {
+        console.error(error);
+        toast.error('Ops, erro ao salvar link!');
+      })
   }
   
   return(
